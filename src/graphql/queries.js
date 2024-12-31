@@ -1,0 +1,1 @@
+// Stores GraphQL queries and mutations for easy reuse
