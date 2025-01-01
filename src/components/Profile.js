@@ -4,10 +4,15 @@
 
 import React from "react";
 import { useQuery } from "@apollo/client";
+// import { useAuth } from "../provider/authProvider";
 import { GET_USER_PROFILE } from "../graphql/queries";
+import LogoutButton from "./Logout";
 
 const Profile = () => {
+  // user data fetching logic
+
   const { loading, error, data } = useQuery(GET_USER_PROFILE);
+//   const { logout } = useAuth(); // accessing logout functionality from the auth provider
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
@@ -27,6 +32,7 @@ const Profile = () => {
           <strong>Joined:</strong>{" "}
           {new Date(user.createdAt).toLocaleDateString()}
         </p>
+        <LogoutButton />
       </div>
     </div>
   );

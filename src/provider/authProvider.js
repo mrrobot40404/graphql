@@ -22,7 +22,7 @@ const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    setToken(null); // clearing token
+    setToken_(null); // clearing token
   };
 
   // using useEffect, we set default auth header in axios, storing token in local store
